@@ -1,0 +1,22 @@
+{
+  "name": "yfm_contracts",
+  "version": "1.0.0",
+  "description": "Youfoundme Contracta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tech41-de@github.com/tech41gmbh/yfm_contracts.git"
+  },
+  "author": "mathias.dietrich@tech41.de",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tech41gmbh/yfm_contracts/issues"
+  },
+  "homepage": "https://github.com/tech41gmbh/yfm_contracts#readme",
+  "devDependencies": {
+    "hardhat": "^2.7.1"
+  }
+}
