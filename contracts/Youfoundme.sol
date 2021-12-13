@@ -20,4 +20,8 @@ contract Youfoundme is ERC721URIStorage, Ownable {
         _setTokenURI(newItemId, tokenURI);
         return newItemId;
     }
+
+    function setTokenUri(uint256 tokenId, string memory tokenURI) public onlyOwner{
+        _setTokenURI(tokenId, tokenURI);
+    }
 }
