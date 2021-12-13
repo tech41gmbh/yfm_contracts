@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/tech41gmbh/yfm_contracts#readme",
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.3",
+    "ethers": "^5.5.2",
     "hardhat": "^2.7.1"
   },
   "dependencies": {
