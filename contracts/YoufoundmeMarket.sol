@@ -1,36 +1,38 @@
-//Contract based on [https://docs.openzeppelin.com/contracts/3.x/erc721](https://docs.openzeppelin.com/contracts/3.x/erc721)
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "OpenZeppelin/openzeppelin-contracts@4.0.0/contracts/token/ERC721/ERC721.sol";
+import "./Youfoundme.sol";
 
 contract YoufoundmeMarket{
+    modifier onlyOwner {
+        require(msg.sender == owner, "Ownable: You are not the owner.");
+        _;
+    }
 
     event BalanceWithdrawn (address indexed beneficiary, uint amount);
     event PriceChanged (uint newprice);
 
     address owner;
-    address nftcontract;
     uint offeringNonce;
     uint256 balance;
     uint256 price;
 
     constructor(){
-         owner = payable(msg.sender); /
+         owner = payable(msg.sender); 
     }
 
     function balanceOf() external view returns (uint256) {
         return balance;
     }
 
-    function withdrawBalance(uint256 amount) external owner {
+    function withdrawBalance(uint256 amount) external onlyOwner {
         require(balance >= amount,"You don't have enough balance to withdraw");
         payable(msg.sender).transfer(amount);
-        balances -= amount;
+        balance -= amount;
         emit BalanceWithdrawn(msg.sender, amount);
     }
 
-    function setPrice(uint256 newprice) {
+    function setPrice(uint256 newprice) external onlyOwner {
        price = newprice;
        emit PriceChanged(newprice);
     }
@@ -39,16 +41,10 @@ contract YoufoundmeMarket{
        return price;
     }
 
-    function purchase(address recipient, address contract, uint256 tokenId, string memory tokenURI) external payable {
-        equire(msg.value < price, "not enough paid");
-        Callee c = Youfoundme(contract);
-        c.mint(recipient, tokenId, tokenURI);
+    function purchasenft(address recipient, address nftcontract, uint256 tokenId, string memory tokenURI) public payable {
+        require(msg.value < price, "not enough paid");
+        bool success = Youfoundme(nftcontract).mintNFT(recipient, tokenId, tokenURI);
+        require(success, "Failed to create NFT");
         balance += msg.value;
-    }
-}
-
-contract Youfoundme(){
-    function mintNFT(address recipient, uint256 tokenId, string memory tokenURI) public onlyOwner returns (uint256){
-       return 0;
     }
 }
