@@ -1,0 +1,17 @@
+{
+  "name": "Cryptophine",
+  "description": "Youfoundme DID, see https://youfoundme.io", 
+  "image": "https://gateway.pinata.cloud/ipfs/QmUGZTtojfX9EWuoLQ82Hf1DBpeVRrCuiLQru1cYVdH1ec",
+  "external_url": "https://youfoundme.io/", 
+  "attributes": [
+    "did":"did:yfm:eip-155:43113:0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC",
+    "tokenid":"2163981636733394440740040119183859832377875469443410561438751543493",
+    "username":"cryptophine",
+    "avatar":"https://youfoundme.s3.eu-central-1.amazonaws.com/cryptophine.glb",
+    "teaser":"Everything Meta",
+    "jobtitle":"Creative Blogger",
+    "ref0":"",
+    "ref1":"",
+    "ref2":"",
+  ]
+}
