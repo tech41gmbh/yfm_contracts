@@ -12,7 +12,7 @@ Minter
 
 
 Contract
-0x9AC8E76c9f9bc80fAc178a7BA021d4F74603b4a8
+0x0E6f00e83cD9B8c6DED1C7a926808e8F0179397c
 
 https://testnet.snowtrace.io/address/0xE985E51B290b9454AD8aF053C5285a44a51F6Ef2
 
@@ -28,6 +28,7 @@ Matd
 did:yfm:eip-155:43113:345879B60BF5ccDDd06BC91E49A6eBc4e93CfDAa 
 tokenid: 
 16463810416611142016106935538063421765033088066682018782392386069911
+
 
 matd.png (image):
 https://gateway.pinata.cloud/ipfs/QmUGZTtojfX9EWuoLQ82Hf1DBpeVRrCuiLQru1cYVdH1ec
@@ -82,5 +83,9 @@ https://youfoundme.s3.eu-central-1.amazonaws.com/turtle.glb
 
 metafile_turtle.json (linked by NFT)
 https://gateway.pinata.cloud/ipfs/QmSweyCBjuTLcBzJaWY8nmDPWug7Z3CLMVirJVJeASwwKS
+
+
+
+https://gateway.pinata.cloud/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 
 
