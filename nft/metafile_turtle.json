@@ -1,0 +1,19 @@
+{
+  "name": "Turtle",
+  "description": "Youfoundme DID, see https://youfoundme.io", 
+  "image": "https://gateway.pinata.cloud/ipfs/QmTcLWtUw45ZqN66jBFdQWpZuNRnBVEnbrpPoo8mv4j8Gs",
+  "external_url": "https://youfoundme.io/", 
+  "attributes": [
+    "did":"did:yfm:eip-155:43113:0x58d22f24cd7fda155f9f7eefe9b32add46388ab9",
+    "tokenid":"4766089976719356397160656965958677530756162459314406362740777087722",
+    "avatar":"https://youfoundme.s3.eu-central-1.amazonaws.com/turtle.glb",
+    "teaser":"Whatever i do i do",
+    "jobtitle":"Developer, Project Manager",
+    "ref0":"",
+    "ref1":"",
+    "ref2":"",
+  ]
+}
+
+
+

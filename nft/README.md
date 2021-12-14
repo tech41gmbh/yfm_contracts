@@ -4,9 +4,15 @@ TODO: avatar files don't render in babylon.js loaded from IPFS, solution might b
 Calculate the token id from the did using hash.js (HashType.SHA3_224, find in folder ../scripts):
 
 
-Contract:
+Contract YoufoundmeNft.sol
 Avalanche Fuji Chain 
-0xE985E51B290b9454AD8aF053C5285a44a51F6Ef2
+
+Minter
+0x345879B60BF5ccDDd06BC91E49A6eBc4e93CfDAa
+
+
+Contract
+0x9AC8E76c9f9bc80fAc178a7BA021d4F74603b4a8
 
 https://testnet.snowtrace.io/address/0xE985E51B290b9454AD8aF053C5285a44a51F6Ef2
 
@@ -35,16 +41,13 @@ metafile_matd.json (linked by NFT)
 https://gateway.pinata.cloud/ipfs/QmcoAxQ3AK293NBboBG8M5L2Bskgbdh9C6bz4JreDU6T62
 
 
-me
-0x345879B60BF5ccDDd06BC91E49A6eBc4e93CfDAa
+
 https://testnet.snowtrace.io/address/0x345879B60BF5ccDDd06BC91E49A6eBc4e93CfDAa
 
 
 Market Contract
 0xbBc6ae88c7fC106AF2c51Fc3c399d69059D6e259
 https://testnet.snowtrace.io/address/0xbBc6ae88c7fC106AF2c51Fc3c399d69059D6e259
-
-
 
 
 2nd Account
@@ -58,11 +61,26 @@ tokenid:
 cryptophine.png (image)
 https://gateway.pinata.cloud/ipfs/QmYbo4ZHEzqymGWBVo35Td2NqRBpNqtke2TU4WNhfuhqLk
 
-
 cryptophine.glb (avatar - IPFS not working at this time):
 https://youfoundme.s3.eu-central-1.amazonaws.com/cryptophine.glb
 
 metafile_cryptophine.json (linked by NFT)
 https://gateway.pinata.cloud/ipfs/QmXheYNsHiG2KXfc2pbsNZ8Sr14SVwQFm98exqtq5cRQd6
+
+
+3rd Account
+Turtle
+did:yfm:eip-155:43113:0x58d22f24cd7fda155f9f7eefe9b32add46388ab9
+0x58d22f24cd7fda155f9f7eefe9b32add46388ab9
+4766089976719356397160656965958677530756162459314406362740777087722
+
+turtle.png (image)
+https://gateway.pinata.cloud/ipfs/QmTcLWtUw45ZqN66jBFdQWpZuNRnBVEnbrpPoo8mv4j8Gs
+
+turtle.glb (avatar - IPFS not working at this time):
+https://youfoundme.s3.eu-central-1.amazonaws.com/turtle.glb
+
+metafile_turtle.json (linked by NFT)
+https://gateway.pinata.cloud/ipfs/QmSweyCBjuTLcBzJaWY8nmDPWug7Z3CLMVirJVJeASwwKS
 
 
