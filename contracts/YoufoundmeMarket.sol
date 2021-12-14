@@ -41,7 +41,7 @@ contract YoufoundmeMarket{
        return price;
     }
 
-    function purchasenft(address recipient, address nftcontract, uint256 tokenId, string memory tokenURI) public payable {
+    function purchasenft(address nftcontract, address recipient,  uint256 tokenId, string memory tokenURI) public payable {
         require(msg.value < price, "not enough paid");
         bool success = Youfoundme(nftcontract).mintNFT(recipient, tokenId, tokenURI);
         require(success, "Failed to create NFT");
