@@ -12,7 +12,7 @@ Minter
 
 
 Contract
-0x0E6f00e83cD9B8c6DED1C7a926808e8F0179397c
+0xdE9C2EBbb5d42F094271e21A9F911A9A2F9E0a67
 
 https://testnet.snowtrace.io/address/0xE985E51B290b9454AD8aF053C5285a44a51F6Ef2
 
@@ -40,7 +40,6 @@ https://youfoundme.s3.eu-central-1.amazonaws.com/matd.glb
 
 metafile_matd.json (linked by NFT)
 https://gateway.pinata.cloud/ipfs/QmcoAxQ3AK293NBboBG8M5L2Bskgbdh9C6bz4JreDU6T62
-
 
 
 https://testnet.snowtrace.io/address/0x345879B60BF5ccDDd06BC91E49A6eBc4e93CfDAa
@@ -87,5 +86,12 @@ https://gateway.pinata.cloud/ipfs/QmSweyCBjuTLcBzJaWY8nmDPWug7Z3CLMVirJVJeASwwKS
 
 
 https://gateway.pinata.cloud/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+
+
+
+
+
+{'tokenId': '16463810416611142016106935538063421765033088066682018782392386069911','uri':'https://gateway.pinata.cloud/ipfs/QmUGZTtojfX9EWuoLQ82Hf1DBpeVRrCuiLQru1cYVdH1ec','minPrice':500,'signature': '0x4661627d59a40bae3c4b5b3699977d82917e0f7e9da63453e6b88380973d168b709c435fff8f3b4a0dfe98f98f1f7be5b233e9f47025d1351435e99f9aa8184e1c'}
+
 
 

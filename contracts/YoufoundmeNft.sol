@@ -2,14 +2,14 @@
 pragma solidity ^0.8.0;
 pragma abicoder v2; // required to accept structs as function parameters
 
-import "hardhat/console.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol";
 
-contract YoufoundmeNft is ERC721URIStorage, EIP712, AccessControl {
+contract YoufoundmeNFT is ERC721URIStorage, EIP712, AccessControl {
+
   bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
   string private constant SIGNING_DOMAIN = "Youfoundme-Voucher";
   string private constant SIGNATURE_VERSION = "1";
@@ -24,12 +24,18 @@ contract YoufoundmeNft is ERC721URIStorage, EIP712, AccessControl {
 
   /// @notice Represents an un-minted NFT, which has not yet been recorded into the blockchain. A signed voucher can be redeemed for a real NFT using the redeem function.
   struct NFTVoucher {
+    /// @notice The id of the token to be redeemed. Must be unique - if another token with this ID already exists, the redeem function will revert.
     uint256 tokenId;
+
+    /// @notice The minimum price (in wei) that the NFT creator is willing to accept for the initial sale of this NFT.
     uint256 minPrice;
+
+    /// @notice The metadata URI to associate with this token.
     string uri;
+
+    /// @notice the EIP-712 signature of all other fields in the NFTVoucher struct. For a voucher to be valid, it must be signed by an account with the MINTER_ROLE.
     bytes signature;
   }
-
 
   /// @notice Redeems an NFTVoucher for an actual NFT, creating it in the process.
   /// @param redeemer The address of the account which will receive the NFT upon success.
@@ -55,6 +61,13 @@ contract YoufoundmeNft is ERC721URIStorage, EIP712, AccessControl {
     pendingWithdrawals[signer] += msg.value;
 
     return voucher.tokenId;
+  }
+
+  /// @notice SetTokenURI uodates the url of the metadata
+  /// @param tokenId The id of the token
+  /// @param uri The URL to retreive the IPDS stored document
+  function setTokenURI(uint256 tokenId, string memory uri) public payable{
+    _setTokenURI(tokenId, uri);
   }
 
   /// @notice Transfers all pending withdrawal balance to the caller. Reverts if the caller is not an authorized minter.
