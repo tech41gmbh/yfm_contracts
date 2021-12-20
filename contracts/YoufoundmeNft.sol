@@ -66,7 +66,7 @@ contract YoufoundmeNFT is ERC721URIStorage, EIP712, AccessControl {
   /// @notice SetTokenURI uodates the url of the metadata
   /// @param tokenId The id of the token
   /// @param uri The URL to retreive the IPDS stored document
-  function setTokenURI(uint256 tokenId, string memory uri) public payable{
+  function setTokenURI(uint256 tokenId, string memory uri) public{
     _setTokenURI(tokenId, uri);
   }
 
