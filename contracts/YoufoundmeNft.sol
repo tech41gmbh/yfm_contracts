@@ -16,6 +16,7 @@ contract YoufoundmeNFT is ERC721URIStorage, EIP712, AccessControl {
 
   mapping (address => uint256) pendingWithdrawals;
   mapping (uint256 => string) private _usernames;
+  mapping (string => uint256) private _token_username;
 
   constructor(address payable minter)
     ERC721("Youfoundme", "YFM") 
@@ -137,6 +138,11 @@ contract YoufoundmeNFT is ERC721URIStorage, EIP712, AccessControl {
         return _username;
     }
 
+    function getTokenByUsername(string memory username) public view virtual returns (uint256) {
+        uint256  _tokenId = _token_username[username];
+        return _tokenId;
+    }
+
     /**
      * @dev Sets `_usernames` as the username of `tokenId`.
      *
@@ -147,5 +153,6 @@ contract YoufoundmeNFT is ERC721URIStorage, EIP712, AccessControl {
     function _setUsername(uint256 tokenId, string memory _username) internal virtual {
         require(_exists(tokenId), "ERC721URIStorage: Username set of nonexistent token");
         _usernames[tokenId] = _username;
+        _token_username[_username] = tokenId;
     }
 }
