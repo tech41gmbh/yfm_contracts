@@ -587,24 +587,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "tokenId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "username",
-						"type": "string"
-					}
-				],
-				"name": "setUsername",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -910,11 +892,11 @@
 			]
 		},
 		"contracts/YoufoundmeNFT.sol": {
-			"keccak256": "0x366a28eb29070293bc632a45debbb55503417b782b45afe2a8d7d01cdc377bc2",
+			"keccak256": "0x59e78036583fad79b9b3109c92359d149593d201cadbbb19e1d3c37b9a85c8bf",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://6969777a46ea9a3bd584329afdf59bd0f3e833ac8e8f4ae406ca3c3ff45c0224",
-				"dweb:/ipfs/QmRsuZsuiTQMHeZ4pwLqJ1azgzkXWsvN3SmVvQtcwUu5mv"
+				"bzz-raw://8d3b095bb39b8868f91aeb93bcd268700781a076fa2aa1b6d20254c0d6a6d430",
+				"dweb:/ipfs/QmNnyGHjAuf7BbFTfk69x4sN3DpE741VW6zviVrbKimo3o"
 			]
 		}
 	},

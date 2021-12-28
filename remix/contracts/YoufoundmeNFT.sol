@@ -75,10 +75,6 @@ contract YoufoundmeNFT is ERC721URIStorage, EIP712, AccessControl {
     _setTokenURI(tokenId, uri);
   }
 
-  function setUsername(uint256 tokenId, string memory username) public{
-    _setUsername(tokenId, username);
-  }
-
   /// @notice Transfers all pending withdrawal balance to the caller. Reverts if the caller is not an authorized minter.
   function withdraw() public {
     require(hasRole(MINTER_ROLE, msg.sender), "Only authorized minters can withdraw");
