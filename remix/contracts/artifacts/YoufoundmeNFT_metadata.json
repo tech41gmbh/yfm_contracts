@@ -296,6 +296,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getUsername",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes32",
 						"name": "role",
 						"type": "bytes32"
@@ -568,6 +587,24 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					}
+				],
+				"name": "setUsername",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -664,6 +701,9 @@
 				},
 				"getRoleAdmin(bytes32)": {
 					"details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
+				},
+				"getUsername(uint256)": {
+					"details": "returns username"
 				},
 				"grantRole(bytes32,address)": {
 					"details": "Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role."
@@ -870,11 +910,11 @@
 			]
 		},
 		"contracts/YoufoundmeNFT.sol": {
-			"keccak256": "0x4a0328f9ff0ddf47d2dbb6760f9b7e8feb4564c368cf35ece3fe3a322f8d9aee",
+			"keccak256": "0x366a28eb29070293bc632a45debbb55503417b782b45afe2a8d7d01cdc377bc2",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://5a639567809e1a551f5a3405bff0fbb2c783777e1941fd54a48c8b52db336e9c",
-				"dweb:/ipfs/QmPhtepEf7eV7VHKDZHYXctEdxHkvwpYvRZy6yE9Gd7dcp"
+				"bzz-raw://6969777a46ea9a3bd584329afdf59bd0f3e833ac8e8f4ae406ca3c3ff45c0224",
+				"dweb:/ipfs/QmRsuZsuiTQMHeZ4pwLqJ1azgzkXWsvN3SmVvQtcwUu5mv"
 			]
 		}
 	},
