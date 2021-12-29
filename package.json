@@ -18,14 +18,16 @@
   "homepage": "https://github.com/tech41gmbh/yfm_contracts#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
-    "hardhat": "^2.7.1",
-    "sha3": "^2.1.4",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.1.0",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
-    "@openzeppelin/contracts": "^4.1.0"
+    "hardhat": "^2.7.1",
+    "sha3": "^2.1.4"
   },
   "dependencies": {
-    "dotenv": "^10.0.0"
+    "bigint-hash": "^0.2.2",
+    "dotenv": "^10.0.0",
+    "web3": "^1.6.1"
   }
 }
