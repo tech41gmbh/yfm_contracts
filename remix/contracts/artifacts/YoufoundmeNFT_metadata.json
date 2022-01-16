@@ -398,6 +398,35 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_hashv",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					}
+				],
+				"name": "isValidSignature",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -601,6 +630,35 @@
 				"name": "setTokenURI",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "sig",
+						"type": "bytes"
+					}
+				],
+				"name": "splitSignature",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -911,11 +969,11 @@
 			]
 		},
 		"contracts/YoufoundmeNFT.sol": {
-			"keccak256": "0x53b9a25138135cfd677de995333b49f0915f38addaa573a8f5cd1ad4821f8ae9",
+			"keccak256": "0xef2c971d2c1366ac40a360883c62f5a71cf3515350f9e9d1fe57da744463a315",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://9e2eb75447647c71cb4beb04587b12dfd82fb4d30334fec8199102a135588166",
-				"dweb:/ipfs/QmPJKGqpzrqbYeufDWu1Ta2mLtBoxmFXB8Kg3Pb6doihdW"
+				"bzz-raw://8fcd1f1446c6995d9476c214e8944d5e16f8bc071bced5e56fdb1db39ef9cbe9",
+				"dweb:/ipfs/QmYuWAc1Lv1Y35YgVP1r1p8ghg3xJuKxs8updBNrM3iDUU"
 			]
 		}
 	},
