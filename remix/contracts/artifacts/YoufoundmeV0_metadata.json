@@ -277,6 +277,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					}
+				],
+				"name": "getDidByUsername",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes32",
 						"name": "role",
 						"type": "bytes32"
@@ -288,6 +307,25 @@
 						"internalType": "bytes32",
 						"name": "",
 						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
+					}
+				],
+				"name": "getTokenByDid",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -321,6 +359,25 @@
 					}
 				],
 				"name": "getUsername",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
+					}
+				],
+				"name": "getUsernameByDid",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -493,7 +550,7 @@
 								"type": "bytes"
 							}
 						],
-						"internalType": "struct YoufoundmeNFT.NFTVoucher",
+						"internalType": "struct YoufoundmeDID.NFTVoucher",
 						"name": "voucher",
 						"type": "tuple"
 					}
@@ -635,35 +692,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
-						"name": "sig",
-						"type": "bytes"
-					}
-				],
-				"name": "splitSignature",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "r",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "s",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "uint8",
-						"name": "v",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -758,11 +786,33 @@
 				"getChainID()": {
 					"details": "This is used to workaround an issue with ganache returning different values from the on-chain chainid() function and  the eth_chainId RPC method. See https://github.com/protocol/nft-website/issues/121 for context."
 				},
+				"getDidByUsername(string)": {
+					"params": {
+						"username": "The username"
+					}
+				},
 				"getRoleAdmin(bytes32)": {
 					"details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
 				},
+				"getTokenByDid(string)": {
+					"params": {
+						"did": "The username"
+					}
+				},
+				"getTokenByUsername(string)": {
+					"params": {
+						"username": "The username"
+					}
+				},
 				"getUsername(uint256)": {
-					"details": "returns username"
+					"params": {
+						"tokenId": "The ID of the NFT"
+					}
+				},
+				"getUsernameByDid(string)": {
+					"params": {
+						"did": "The DID"
+					}
 				},
 				"grantRole(bytes32,address)": {
 					"details": "Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role."
@@ -802,8 +852,8 @@
 				},
 				"setTokenURI(uint256,string)": {
 					"params": {
-						"tokenId": "The id of the token",
-						"uri": "The URL to retreive the IPDS stored document"
+						"tokenId": "The ID of the NFT",
+						"uri": "The uri of the metafile, typically in IPFS"
 					}
 				},
 				"symbol()": {
@@ -827,11 +877,26 @@
 				"getChainID()": {
 					"notice": "Returns the chain id of the current blockchain."
 				},
+				"getDidByUsername(string)": {
+					"notice": "Gets the Did by Username"
+				},
+				"getTokenByDid(string)": {
+					"notice": "Gets the TokenID by DID"
+				},
+				"getTokenByUsername(string)": {
+					"notice": "Gets the TokenID by Username"
+				},
+				"getUsername(uint256)": {
+					"notice": "Gets the username "
+				},
+				"getUsernameByDid(string)": {
+					"notice": "Gets the Username by DID"
+				},
 				"redeem(address,(uint256,uint256,string,string,bytes))": {
 					"notice": "Redeems an NFTVoucher for an actual NFT, creating it in the process."
 				},
 				"setTokenURI(uint256,string)": {
-					"notice": "SetTokenURI uodates the url of the metadata"
+					"notice": "Sets the Metadata URI of the NFY"
 				},
 				"withdraw()": {
 					"notice": "Transfers all pending withdrawal balance to the caller. Reverts if the caller is not an authorized minter."
@@ -842,7 +907,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/YoufoundmeDID.sol": "YoufoundmeNFT"
+			"contracts/YoufoundmeV0.sol": "YoufoundmeV0"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -968,12 +1033,12 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"contracts/YoufoundmeDID.sol": {
-			"keccak256": "0x44024dc539e50113fd04c85a0a1b7d90bbacd8b30b97782917b4129af6ea4d6b",
+		"contracts/YoufoundmeV0.sol": {
+			"keccak256": "0x360884ab4fa38d2aa5ab65aea454f676670b6cb76c41d5e8de459efb170061ab",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://261e464acd613c1ea16615ca64d85e4d46c3e8ba22b33201b072e674d47920d0",
-				"dweb:/ipfs/QmR1fVfXjLE9HeyfaFkvWjNBN2bqSgQ2zrvE7HMdMG7nao"
+				"bzz-raw://890fc3be6050b06f77537d388945725e36392832b76fd48743d63f69af7e9ecf",
+				"dweb:/ipfs/QmUbUC5kk556SfLFNqUbMEju157TTjKMxwtbXiqMKZfdBf"
 			]
 		}
 	},

@@ -493,7 +493,7 @@
 								"type": "bytes"
 							}
 						],
-						"internalType": "struct YoufoundmeNFT.NFTVoucher",
+						"internalType": "struct Youfoundme.NFTVoucher",
 						"name": "voucher",
 						"type": "tuple"
 					}
@@ -842,7 +842,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/YoufoundmeDID.sol": "YoufoundmeNFT"
+			"contracts/YoufoundmeDID.sol": "Youfoundme"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -969,11 +969,11 @@
 			]
 		},
 		"contracts/YoufoundmeDID.sol": {
-			"keccak256": "0x44024dc539e50113fd04c85a0a1b7d90bbacd8b30b97782917b4129af6ea4d6b",
+			"keccak256": "0x27a5caf38d97b8311ea0c08e31b7810b72eef467baee777defad6acd3f6ea924",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://261e464acd613c1ea16615ca64d85e4d46c3e8ba22b33201b072e674d47920d0",
-				"dweb:/ipfs/QmR1fVfXjLE9HeyfaFkvWjNBN2bqSgQ2zrvE7HMdMG7nao"
+				"bzz-raw://5bf0b49c2b1ab7337dc2a3d72c5e8509874178cd9ace49d0f5cd0cfb71702158",
+				"dweb:/ipfs/QmRiZWHJMrYG1bYcqVpjaCR9wST3PCGwLErhL7w1ogngDh"
 			]
 		}
 	},

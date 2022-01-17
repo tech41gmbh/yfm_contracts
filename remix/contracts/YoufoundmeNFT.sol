@@ -1,7 +1,8 @@
 //SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.0;
 pragma abicoder v2; // required to accept structs as function parameters
 
+// https://solidity-by-example.org/signature/
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
@@ -10,10 +11,12 @@ import "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol";
 
 contract YoufoundmeNFT is ERC721URIStorage, EIP712, AccessControl {
 
-  bytes4 constant internal MAGICVALUE = 0x20c13b0b;
+  
   bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
   string private constant SIGNING_DOMAIN = "Youfoundme-Voucher";
   string private constant SIGNATURE_VERSION = "1";
+  
+  bytes4 constant internal MAGICVALUE = 0x20c13b0b;
 
   mapping (address => uint256) pendingWithdrawals;
   mapping (uint256 => string) private _usernames;
@@ -157,11 +160,12 @@ contract YoufoundmeNFT is ERC721URIStorage, EIP712, AccessControl {
       _token_username[_username] = tokenId;
   }
 
+/*
   function isValidSignature(
     address signer,
     bytes32 _hashv,
     bytes calldata _signature
-    ) external  view returns (bytes4) {
+    ) internal  view returns (bytes4) {
       // Validate signatures
       if (recoverSigner(_hashv, _signature) == signer) {
         return 0x1626ba7e;
@@ -181,15 +185,7 @@ function splitSignature(bytes memory sig)
     {
         require(sig.length == 65, "invalid signature length");
         assembly {
-            /*
-            First 32 bytes stores the length of the signature
-
-            add(sig, 32) = pointer of sig + 32
-            effectively, skips first 32 bytes of signature
-
-            mload(p) loads next 32 bytes starting at the memory address p into memory
-            */
-
+    
             // first 32 bytes, after the length prefix
             r := mload(add(sig, 32))
             // second 32 bytes
@@ -244,4 +240,6 @@ function splitSignature(bytes memory sig)
     );
     return signer;
   }
+
+  */
 }
