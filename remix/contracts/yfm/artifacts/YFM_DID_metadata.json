@@ -294,6 +294,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getName",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "bytes32",
@@ -550,7 +563,7 @@
 								"type": "bytes"
 							}
 						],
-						"internalType": "struct YoufoundmeDID.NFTVoucher",
+						"internalType": "struct YFMI_DID.NFTVoucher",
 						"name": "voucher",
 						"type": "tuple"
 					}
@@ -880,6 +893,9 @@
 				"getDidByUsername(string)": {
 					"notice": "Gets the Did by Username"
 				},
+				"getName()": {
+					"notice": "Returns the name of the contract"
+				},
 				"getTokenByDid(string)": {
 					"notice": "Gets the TokenID by DID"
 				},
@@ -907,7 +923,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/YoufoundmeV0.sol": "YoufoundmeV0"
+			"localhost/contracts/yfm/YFM_DID.sol": "YFM_DID"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -1033,12 +1049,20 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"localhost/contracts/YoufoundmeV0.sol": {
-			"keccak256": "0x43ec3bdc2afe271051cfb6cf0386869a1cb810d51532420917f8ce725903012d",
+		"localhost/contracts/interfaces/YFMI_DID.sol": {
+			"keccak256": "0x6db2065944d0152313ebeb5a513d782050aa079315b06a8f97a29ba948e80323",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://0f218a1dcef53729a83651084cefb5b73f72b758b39b71d9972a620d6f6b6b48",
-				"dweb:/ipfs/QmQbZrNSektX8jZQ6n9Ee5ne2gzmqMmFshzhxjp5Crq9vG"
+				"bzz-raw://56cb07e6dd2cd32ed2cc3edb3d05459d3161510f225dd2f9a1d2c3ac02fd2e94",
+				"dweb:/ipfs/Qmf6a6JD64DjiAcAN6MMChGtrVpFnaqeRHGWnxMH4VJCWh"
+			]
+		},
+		"localhost/contracts/yfm/YFM_DID.sol": {
+			"keccak256": "0xc1efc7612cdd901abdb346bcfd48e1e727d3e5b24e0fd3aabef3dfbf41c6b86f",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://97710e89c5e55e127d2cf0459a640d2afa17af8d6caf0ca77c2a77521af7662b",
+				"dweb:/ipfs/QmeetRFSffJXHKzRUiV1AeZmW2sQk7CS7bsYvJrsfk6iUb"
 			]
 		}
 	},

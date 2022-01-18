@@ -282,7 +282,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/YoufoundmeV0.sol": "YoufoundmeDID"
+			"contracts/interfaces/YFM_DID.sol": "YoufoundmeDID"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -408,12 +408,12 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"localhost/contracts/YoufoundmeV0.sol": {
-			"keccak256": "0x43ec3bdc2afe271051cfb6cf0386869a1cb810d51532420917f8ce725903012d",
+		"contracts/interfaces/YFM_DID.sol": {
+			"keccak256": "0x4817923ea2e30c6a30a5b79360c8b12d90667722c60cbb5cb8e9d6da7bd46f68",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://0f218a1dcef53729a83651084cefb5b73f72b758b39b71d9972a620d6f6b6b48",
-				"dweb:/ipfs/QmQbZrNSektX8jZQ6n9Ee5ne2gzmqMmFshzhxjp5Crq9vG"
+				"bzz-raw://2716caa917f0170811aff33d842f88909fc5821c34b5b588f27b8bf800e8bbed",
+				"dweb:/ipfs/Qma77mo8vaRA2md2yy2F4FGVYVnJNf6jJAFLSF5Bf2YCJP"
 			]
 		}
 	},

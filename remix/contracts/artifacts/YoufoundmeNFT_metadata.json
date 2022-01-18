@@ -398,35 +398,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "signer",
-						"type": "address"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "_hashv",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "bytes",
-						"name": "_signature",
-						"type": "bytes"
-					}
-				],
-				"name": "isValidSignature",
-				"outputs": [
-					{
-						"internalType": "bytes4",
-						"name": "",
-						"type": "bytes4"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -635,35 +606,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
-						"name": "sig",
-						"type": "bytes"
-					}
-				],
-				"name": "splitSignature",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "r",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "s",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "uint8",
-						"name": "v",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -842,7 +784,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/YoufoundmeDID.sol": "YoufoundmeNFT"
+			"contracts/YoufoundmeNFT.sol": "YoufoundmeNFT"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -968,12 +910,12 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"contracts/YoufoundmeDID.sol": {
-			"keccak256": "0x44024dc539e50113fd04c85a0a1b7d90bbacd8b30b97782917b4129af6ea4d6b",
+		"contracts/YoufoundmeNFT.sol": {
+			"keccak256": "0x4f348dd689c16ec6855fd77c727da13143ee86abdf8a1701f1f994e872729a44",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://261e464acd613c1ea16615ca64d85e4d46c3e8ba22b33201b072e674d47920d0",
-				"dweb:/ipfs/QmR1fVfXjLE9HeyfaFkvWjNBN2bqSgQ2zrvE7HMdMG7nao"
+				"bzz-raw://158ad7501dfd7f7244c4110282dd2b6e5bc8de227b4554fb8da36a14859a9f9e",
+				"dweb:/ipfs/QmU8hN4RraoQjGk6A3yxD5HZJphEerig8R1Tx2HHFSm1Gw"
 			]
 		}
 	},

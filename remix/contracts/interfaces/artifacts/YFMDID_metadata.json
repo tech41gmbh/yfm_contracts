@@ -164,7 +164,7 @@
 								"type": "bytes"
 							}
 						],
-						"internalType": "struct YoufoundmeDID.NFTVoucher",
+						"internalType": "struct YFMDID.NFTVoucher",
 						"name": "voucher",
 						"type": "tuple"
 					}
@@ -282,7 +282,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/YoufoundmeV0.sol": "YoufoundmeDID"
+			"contracts/interfaces/YFM_DID.sol": "YFMDID"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -408,12 +408,12 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"localhost/contracts/YoufoundmeV0.sol": {
-			"keccak256": "0x43ec3bdc2afe271051cfb6cf0386869a1cb810d51532420917f8ce725903012d",
+		"contracts/interfaces/YFM_DID.sol": {
+			"keccak256": "0x36a3618c77c712c850bc7fac64eed022a947890703f399aff4e5ff8238beca09",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://0f218a1dcef53729a83651084cefb5b73f72b758b39b71d9972a620d6f6b6b48",
-				"dweb:/ipfs/QmQbZrNSektX8jZQ6n9Ee5ne2gzmqMmFshzhxjp5Crq9vG"
+				"bzz-raw://4f7852fbfbcc9aaeafdf0e6a6513c436525521a8c6674ed9441b6ae6d73db6f5",
+				"dweb:/ipfs/Qma1QoZeUZ7oeij5aEXTezBASELr5TTQPBiSNgQjbqhMVB"
 			]
 		}
 	},
