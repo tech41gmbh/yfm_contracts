@@ -462,22 +462,39 @@
 						"type": "address"
 					},
 					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "text",
+								"type": "string"
+							}
+						],
+						"internalType": "struct YoufoundmeDID.set",
+						"name": "message",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
 						"internalType": "bytes32",
-						"name": "_hashv",
+						"name": "r",
 						"type": "bytes32"
 					},
 					{
-						"internalType": "bytes",
-						"name": "_signature",
-						"type": "bytes"
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
 					}
 				],
 				"name": "isValidSignature",
 				"outputs": [
 					{
-						"internalType": "bytes4",
+						"internalType": "bool",
 						"name": "",
-						"type": "bytes4"
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -823,6 +840,15 @@
 				"isApprovedForAll(address,address)": {
 					"details": "See {IERC721-isApprovedForAll}."
 				},
+				"isValidSignature(address,(string),uint8,bytes32,bytes32)": {
+					"params": {
+						"message": "the Message signed",
+						"r": "signature The signature to be verified",
+						"s": "signature The signature to be verified",
+						"signer": "The signer",
+						"v": "signature The signature to be verified"
+					}
+				},
 				"name()": {
 					"details": "See {IERC721Metadata-name}."
 				},
@@ -892,6 +918,9 @@
 				"getUsernameByDid(string)": {
 					"notice": "Gets the Username by DID"
 				},
+				"isValidSignature(address,(string),uint8,bytes32,bytes32)": {
+					"notice": "Checks if a signature is valid string memory text bytes calldata signature"
+				},
 				"redeem(address,(uint256,uint256,string,string,bytes))": {
 					"notice": "Redeems an NFTVoucher for an actual NFT, creating it in the process."
 				},
@@ -907,7 +936,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/YoufoundmeV0.sol": "YoufoundmeV0"
+			"contracts/YoufoundmeV0.sol": "YoufoundmeV0"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -1033,12 +1062,12 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"localhost/contracts/YoufoundmeV0.sol": {
-			"keccak256": "0x43ec3bdc2afe271051cfb6cf0386869a1cb810d51532420917f8ce725903012d",
+		"contracts/YoufoundmeV0.sol": {
+			"keccak256": "0xa8ccf0056a52077a04c0f0d2c932291d754418f0ee3371ec2e9f23e9d3b12094",
 			"license": "Unlicense",
 			"urls": [
-				"bzz-raw://0f218a1dcef53729a83651084cefb5b73f72b758b39b71d9972a620d6f6b6b48",
-				"dweb:/ipfs/QmQbZrNSektX8jZQ6n9Ee5ne2gzmqMmFshzhxjp5Crq9vG"
+				"bzz-raw://b4ab32da6328cae7b371121d83c73c67936c6cc42caed6497a37948f835cbb98",
+				"dweb:/ipfs/QmZ39wfx7xEJnTF7RqeE1UmEuN3LSj2qkhpyTtEFwBg19k"
 			]
 		}
 	},

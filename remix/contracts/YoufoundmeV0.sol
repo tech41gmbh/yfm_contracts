@@ -54,11 +54,19 @@ interface YoufoundmeDID {
     /// @param did The DID
     function getUsernameByDid(string memory did) view external returns (string memory);
 
-    /// @notice Checks if a signature is valid
-    /// @param signer The Address of the signer
-    /// @param hash The hash if the message
-    /// @param signature The signature
-    function isValidSignature(address signer, bytes32 hash, bytes calldata signature) view external returns (bytes4);
+
+
+    struct set {
+        string text;
+    }
+
+    /// @notice Checks if a signature is valid string memory text bytes calldata signature
+    /// @param signer The signer
+    /// @param message the Message signed
+    /// @param v signature The signature to be verified
+    /// @param r signature The signature to be verified
+    /// @param s signature The signature to be verified
+    function isValidSignature(address signer, set calldata message, uint8 v, bytes32 r, bytes32 s)  view  external returns (bool);
 }
 
 contract YoufoundmeV0 is
@@ -250,33 +258,57 @@ contract YoufoundmeV0 is
     // https://medium.com/metamask/eip712-is-coming-what-to-expect-and-how-to-use-it-bb92fd1a7a26
     function isValidSignature(
         address signer,
-        bytes32 _hashv,
-        bytes calldata _signature
-    ) public view override virtual returns (bytes4) {
-        // Validate signatures
-        if (recoverSigner(_hashv, _signature) == signer) {
-            return 0x1626ba7e;
-        } else {
-            return 0xffffffff;
+        set calldata  message,
+        uint8 v, bytes32 r, bytes32 s
+    ) public view override virtual returns (bool) {
+        uint256 chainId;
+        assembly {
+            chainId := chainid()
         }
-    }
+        
+        bytes32 EIP712DOMAIN_TYPEHASH = keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)");
+        bytes32 eipDomainHash = keccak256(
+            abi.encode(
+                EIP712DOMAIN_TYPEHASH,
+                keccak256(bytes("Youfoundme")),
+                keccak256(bytes("1")),
+                chainId,
+                address(this)
+            )
+        );
 
-    function isValidSignatureByDid(
-        string did,
-        bytes32 _hashv,
-        bytes calldata _signature
-    ) public view override virtual returns (bytes4) {
-        // Validate signatures
-        if (recoverSigner(_hashv, _signature) == signer) {
-            return 0x1626ba7e;
-        } else {
-            return 0xffffffff;
-        }
+        bytes32  MSG_TYPEHASH = keccak256("set(string text)");
+        bytes32 hashStruct = keccak256(
+            abi.encode(
+               MSG_TYPEHASH,
+                keccak256(bytes(message.text))
+            )
+        );
+
+        bytes32 digest = keccak256(abi.encodePacked("\x19\x01",eipDomainHash,hashStruct));
+         return ecrecover(digest, v, r, s) == signer;
     }
 
 /* ======================================================================================================
     Helper Functions 
     ======================================================================================================*/
+
+    function bytesToAddress (bytes memory b) internal pure returns (address) {
+       uint160 result = 0;
+        for (uint i = 0; i < b.length; i++) {
+            uint160 c = uint160(uint8(b[i]));
+            if (c >= 48 && c <= 57) {
+                result = result * 16 + (c - 48);
+            }
+            if(c >= 65 && c<= 90) {
+                result = result * 16 + (c - 55);
+            }
+            if(c >= 97 && c<= 122) {
+                result = result * 16 + (c - 87);
+            }
+        }
+        return address(result);
+    }
 
     function getSlice(uint256 begin, uint256 end, string memory text) internal pure returns (string memory) {
         bytes memory a = new bytes(end-begin+1);
@@ -446,7 +478,7 @@ contract YoufoundmeV0 is
         s[2*i+1] = char(lo);            
     }
     return string(s);
-}
+    }
 
     function char(bytes1 b) internal pure returns (bytes1 c) {
         if (uint8(b) < 10) return bytes1(uint8(b) + 0x30);

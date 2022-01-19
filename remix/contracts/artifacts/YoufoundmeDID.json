@@ -54,7 +54,7 @@
 			"getTokenByUsername(string)": "abb7af52",
 			"getUsername(uint256)": "f18d18cc",
 			"getUsernameByDid(string)": "38ba7bec",
-			"isValidSignature(address,bytes32,bytes)": "238a4d1e",
+			"isValidSignature(address,(string),uint8,bytes32,bytes32)": "af1e6b43",
 			"redeem(address,(uint256,uint256,string,string,bytes))": "17c8f90b",
 			"setTokenURI(uint256,string)": "162094c4"
 		}
@@ -163,22 +163,39 @@
 					"type": "address"
 				},
 				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "text",
+							"type": "string"
+						}
+					],
+					"internalType": "struct YoufoundmeDID.set",
+					"name": "message",
+					"type": "tuple"
+				},
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
 					"internalType": "bytes32",
-					"name": "hash",
+					"name": "r",
 					"type": "bytes32"
 				},
 				{
-					"internalType": "bytes",
-					"name": "signature",
-					"type": "bytes"
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
 				}
 			],
 			"name": "isValidSignature",
 			"outputs": [
 				{
-					"internalType": "bytes4",
+					"internalType": "bool",
 					"name": "",
-					"type": "bytes4"
+					"type": "bool"
 				}
 			],
 			"stateMutability": "view",
