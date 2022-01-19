@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol";
 
-interface YFMI_DID {
+interface YFMI_DID_V0 {
     
     /// @notice Represents an un-minted NFT, which has not yet been recorded into the blockchain. A signed voucher can be redeemed for a real NFT using the redeem function.
     struct NFTVoucher {
@@ -23,9 +23,6 @@ interface YFMI_DID {
         /// @notice the EIP-712 signature of all other fields in the NFTVoucher struct. For a voucher to be valid, it must be signed by an account with the MINTER_ROLE.
         bytes signature;
     }
-
-    /// @notice Returns the name of the contract
-    function getName() view external returns (string memory);
 
     /// @notice Redeems an NFTVoucher for an actual NFT, creating it in the process.
     /// @param redeemer The address of the account which will receive the NFT upon success.
@@ -57,9 +54,17 @@ interface YFMI_DID {
     /// @param did The DID
     function getUsernameByDid(string memory did) view external returns (string memory);
 
-    /// @notice Checks if a signature is valid
-    /// @param signer The Address of the signer
-    /// @param hash The hash if the message
-    /// @param signature The signature
-    function isValidSignature(address signer, bytes32 hash, bytes calldata signature) view external returns (bytes4);
+
+
+    struct set {
+        string text;
+    }
+
+    /// @notice Checks if a signature is valid string memory text bytes calldata signature
+    /// @param signer The signer
+    /// @param message the Message signed
+    /// @param v signature The signature to be verified
+    /// @param r signature The signature to be verified
+    /// @param s signature The signature to be verified
+    function isValidSignature(address signer, set calldata message, uint8 v, bytes32 r, bytes32 s)  view  external returns (bool);
 }

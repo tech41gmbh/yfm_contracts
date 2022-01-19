@@ -1,2 +1,3 @@
-remixd -s /Users/mat/gitroot/yfm_contracts/remix
+remixd -s /Users/mat/gitroot/yfm_contracts
+
 
